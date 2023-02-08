@@ -9,7 +9,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class JpaCreate {
-
     public static void createTables(EntityManager entityManager) {
         // create new country instances
         Country country1 = new Country();

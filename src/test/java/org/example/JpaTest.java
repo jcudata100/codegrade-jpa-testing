@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/* Note:  persistence.xml assumes PostgreSQL database named jpalab_db */
+/* Note:  persistence.xml assumes PostgreSQL database jpalab_db */
 
 class JpaTest {
 
