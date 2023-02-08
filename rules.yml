@@ -1,0 +1,34 @@
+rules:
+  - id: rule1
+    match-expected: true
+    pattern-either:
+      - pattern: |
+          @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+          private Capital capital;
+      - pattern: |
+          @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+          private Capital capital;
+    message: Country class - @OneToOne correct
+    severity: INFO
+    languages:
+      - java
+
+  - id: rule2
+    match-expected: true
+    pattern: |
+      @OneToOne(mappedBy = "capital")
+      private Country country;
+    message: Capital class - @OneToOne correct
+    languages:
+      - java
+    severity: INFO
+
+  - id: rule3
+    match-expected: true
+    pattern: |
+      country1.setCapital(capital1);
+      country2.setCapital(capital2);
+    message: JpaCreate - establish country and capital association using setCapital method
+    languages:
+      - java
+    severity: INFO
